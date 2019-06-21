@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :category %>
+    <%= f.collection_select(:category_id, @categories, :id, :name, class: "form-control") %>
+  </div>
+
+  <div class="field">
     <%= f.label :owned %>
     <%= f.check_box :owned %>
   </div>
