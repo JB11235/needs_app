@@ -4,8 +4,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items_wanted = Item.wanted
-    @items_owned = Item.owned
+    @items = Item.single
   end
 
   # GET /items/1

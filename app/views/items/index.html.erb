@@ -1,65 +1,28 @@
 <p id="notice"><%= notice %></p>
+<h1>Items without Collections</h1>
 
-<h1>Items</h1>
-
-<div class="row mx-1">
-  <div class="col-6 text-center">
-    <h5>Stuff I Want</h5>
-  </div>
-  <div class="col-6 text-center">
-    <h5>Stuff I Have</h5>
-  </div>
-</div>
-<div class="row">
-<table class="table table-striped table-sm table-bordered col-6 w-50 ">
-  <thead class="thead-dark">
+<table>
+  <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Owned</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @items_wanted.each do |item| %>
+    <% @items.each do |item| %>
       <tr>
         <td><%= item.name %></td>
         <td><%= item.description %></td>
-        <td><%= item.owned %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', category %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 
-<table class="table table-striped table-sm table-bordered col-6 w-50 table-success">
-  <thead class="thead-success">
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Owned</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @items_owned.each do |item| %>
-      <tr>
-        <td><%= item.name %></td>
-        <td><%= item.description %></td>
-        <td><%= item.owned %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
-<br>
 
 <%= link_to 'New Item', new_item_path %>
